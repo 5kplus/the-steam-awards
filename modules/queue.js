@@ -27,7 +27,7 @@ module.exports = async function(steamClient, RequestCommunity, RequestStore, Ses
         });
         
     } catch (error) {
-        logError('Error getting the queue. Reason: ' + reason);
+        logError('Error getting the queue. Reason: ' + error);
         callback();
     }
 
@@ -39,9 +39,16 @@ module.exports = async function(steamClient, RequestCommunity, RequestStore, Ses
                     sessionid: SessionID,
                     queuetype: 0
                 },
-            }, function (error, response, body) {
+                json: true,
+                headers: {
+                    'Origin': 'https://store.steampowered.com',
+                    'Accept': '*/*',
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                    'Referer': 'https://store.steampowered.com/explore/',
+                    'X-Requested-With': 'XMLHttpRequest',
+                },
+            }, function (error, response, data) {
                 try {
-                    var data = JSON.parse(body);
                     resolve(data.queue);
                 } catch (e) {
                     logError("was not able to get new queue, will retry ( can end end loop, if never get a new queue )")

@@ -4,7 +4,6 @@
 
 This project is to do multiple actions at once on Steam, whit multiple steam account
 
-
 # Status on project 
 Steam have change how the login, to get cookies and sessionid. I have change the login system to use [node-steam-user](https://github.com/DoctorMcKay/node-steam-user), I doent like the change, as it remove some controll. As i do ensure there is no way to pass the steam limits. But as it handle the login request, outside the request handler i have. it can for some reach the limit. This do only effect the `cluster` mode, when it running multi account at once. So just run a smaller amount at the time. 
 
@@ -14,9 +13,6 @@ So you have to do `npm i`, to get the new node module.
 !Note: i have tested a handfull of the modules, to ensure it works are the changed. Not all is tested, so do report back if one do not work.
 
 Im an looking into it, read more in issue : https://github.com/quer/the-steam-awards/issues/70
-
-# free store claim ( remoteplay together Fest )
-run module `pointsShop/RedeemPoints` to get the 3 free claims
 
 # Read the wiki for details
 More details in the wiki, on how to setup, and use modules.

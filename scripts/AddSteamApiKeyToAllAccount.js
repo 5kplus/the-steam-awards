@@ -5,8 +5,8 @@ const config = require('../config');
 const CoreSteam = require('../lib/CoreSteam');
 const getSteamAPIKey = require('steam-web-api-key');
 const Settings = require('../lib/Settings');
-Settings.AuthFieldNameUsername = "username";
-Settings.AuthFieldNamePassword = "password";
+//Settings.AuthFieldNameUsername = "username";
+//Settings.AuthFieldNamePassword = "password";
 
 var ss = {
     LoadModules: function (list) {

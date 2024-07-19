@@ -20,7 +20,7 @@ try {
     }
     throw e;
 }
-const TradeUrl = "https://steamcommunity.com/tradeoffer/new/?partner=29967844&token=ipZz21tf";
+const TradeUrl = "https://steamcommunity.com/tradeoffer/new/?partner=29967844&token=ipZz21tf"; // This is my trade link, change to the account that shoud get the trade
 const domain = "example.com"
 const language = "en"
 const settings = require('../lib/Settings');

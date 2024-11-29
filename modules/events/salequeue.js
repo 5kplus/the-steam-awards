@@ -1,5 +1,6 @@
 var cheerio = require('cheerio');
-var runQueueTimes = 1; // will run queue 1 time ( some event, have 3 time card drop)
+var runQueueTimes = 3; // will run queue 1 time ( some event, have 3 time card drop)
+var itemsToExpectToBeAddedToAccount = 9;
 var timeBetweenFullQueue = 10 * 1000; // 2 sec
 var shoudRetryedMissingItem = true;
 module.exports = function(steamClient, RequestCommunity, RequestStore, SessionID, options, callback){
@@ -10,8 +11,9 @@ module.exports = function(steamClient, RequestCommunity, RequestStore, SessionID
             await queueRun(steamClient, RequestCommunity, RequestStore, SessionID, options);
             
         }
+        await new Promise(resolve => setTimeout(resolve, 10000)); // after we run the queue. wait 10 sec, to ensure it added to the steam_notifications
         getNewItems(RequestStore, async function (itemAfter) {
-            var itemNeeded = (itemBefore + runQueueTimes) - itemAfter;
+            var itemNeeded = (itemBefore + itemsToExpectToBeAddedToAccount) - itemAfter;
             //all done and did get the items expected 
             if(itemNeeded == 0)
             {

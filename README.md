@@ -3,7 +3,7 @@
 [![Steam Profile][steam-account-img]][steam-account-url]
 
 This project is to do multiple actions at once on Steam, whit multiple steam account
-# Steam awards ( current live 2023 )
+# Steam awards ( current live 2024 )
 The Steam Awards have just started. Where you can get 9 `free sticker`, and you get a badge for compleating the award event.
 I have added a new module, that will fully complete the event, and give the stage 4 of the badge.
 

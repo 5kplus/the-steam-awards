@@ -3,14 +3,6 @@
 [![Steam Profile][steam-account-img]][steam-account-url]
 
 This project is to do multiple actions at once on Steam, whit multiple steam account
-# Steam awards ( current live 2024 )
-The Steam Awards have just started. Where you can get 9 `free sticker`, and you get a badge for compleating the award event.
-I have added a new module, that will fully complete the event, and give the stage 4 of the badge.
-
-run module: `events/salequeue` once to get the free sticker, it will run the queue 3 times, and ensure you get the 9 `free sticker`
-
-run module: `events/steamawards-2024` once, and it will give you the stage 4 badge. 
-( there have been added safe stuff into it, so it will check if it need to be done. so shoud somefing happen, then just run it agirn. and it will skip, account that is allready done )
 
 # Read the wiki for details
 More details in the wiki, on how to setup, and use modules.

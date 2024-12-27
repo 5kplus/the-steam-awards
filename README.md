@@ -4,6 +4,38 @@
 
 This project is to do multiple actions at once on Steam, whit multiple steam account
 
+# steam winter sale 2024
+This year, there is no free tradig cards. but 9 free stickers, and steam award where you can get 11 more stickers.
+Agirn this year, you are able to vote on games to get a small reward, and a bagde. i have updated/added new modules to get all the free stuff.  
+If there is anything i missed, let me know
+Just run:
+ * the `events/replay-2024` module, will get the replay for 2024, it will tell if the account will get it or not. As you will only get the badge, if the account have played any think.  
+ * the `events/winter-sale-2024-award` module, I have added a safe in, so if it tell that a account did not finish it, then just run it agirn. And it will only run for account missing some of the awards.
+ * the `events/salequeue` module, and it will run the queue 3 times, and ensure it get the 9 free stickers. 
+ * * NOTE: if you have many account you might want to run, whit a delay between each running mode. There is a setting called `RunningMode.DelayBetweenAccountModes`  where the value is in mulisec. so each 1000 = 1 sec
+    
+    
+here is a example, of the main.js:!
+ ```js
+ const settings = require('./lib/Settings');
+const core = require('./lib/Core');
+settings.RunningMode.Mode = settings.Enums.RunningMode.Single;
+settings.RunningMode.DelayBetweenAccountModes = 2000; // 2sec
+var modules = [];
+modules.push('events/replay-2024');
+modules.push('events/winter-sale-2024-award');
+modules.push('events/salequeue');
+core.RunAllBots(modules)
+.then(function () {
+}).catch(function (error) {
+	core.logError("Somefing happend!");
+	core.logError(error);
+}).finally(function () {
+	process.exit();
+})
+ ```
+
+
 # Read the wiki for details
 More details in the wiki, on how to setup, and use modules.
 
